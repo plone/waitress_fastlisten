@@ -15,7 +15,7 @@ In your paste based WSGI configuration in ``[server:main]`` set:
 - ``use`` to ``egg:plone.recipe.zope2instance#main``
 - ``fast-listen`` to ``HOST:PORT``
 
-Do *not* set ``listen = ``.
+Do *not* set "listen =".
 
 Example:
 
