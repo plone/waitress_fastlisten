@@ -1,0 +1,5 @@
+.python-version
+*.egg-info
+.*-cache
+__pycache__
+example/*-outfile.txt
