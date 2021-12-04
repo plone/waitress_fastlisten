@@ -2,9 +2,12 @@ import waitress
 import socket
 import time
 import typing
+import logging
+
+logger = logging.getLogger(__name__)
 
 
-def serve_paste(
+def serve_waitress(
     app: typing.Callable, global_conf: dict, **kw: typing.Any
 ) -> int:
     sockets: list = []
@@ -38,9 +41,10 @@ def server_factory(global_conf: dict, **kws: str) -> typing.Callable:
             filenos.append(str(fileno))
         global_conf.update(prebound=" ".join(filenos))
         del kws["fast-listen"]
+        logger.info("waitress fast listen initialized.")
     del kws["paste.server_factory"]
 
     def serve(app: typing.Callable):
-        return serve_paste(app, global_conf, **kws)
+        return serve_waitress(app, global_conf, **kws)
 
     return serve
