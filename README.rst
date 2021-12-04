@@ -2,7 +2,7 @@
 A fast listen implementation for Waitress WSGI
 ==============================================
 
-This tiny package allows the waitress WSGI server to immediatly pre-bind to a port an listen to it.
+This tiny package allows the waitress WSGI server to immediatly pre-bind to a port and listen to it.
 It waits then for the app to start up and passes then requests further.
 
 
